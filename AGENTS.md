@@ -38,6 +38,11 @@ Agent cognitif symbiotique, souverain, certifié ZK. CPU-only, offline-capable.
 - Pas d'apprentissage conjoint bout-en-bout (Phase 4 expérimentale).
 
 ## Dépôts liés (user: evinajonathan13-max)
-- RATISS-ODV-AEON : cerveau TTF-Compute (copié dans fusion/aeon/)
-- Ratiss-experimental-IA- : RATIS-Net (copié dans fusion/ratis_net/)
+- RATISS-ODV-AEON : moteur TTF-Compute (copié dans fusion/aeon/) — INFRASTRUCTURE topo pure, SANS émotions, NON régi par la loi P_sig. Utilisé comme moteur par RATISS-Net.
+- Ratiss-experimental-IA- : RATISS-Net (copié dans fusion/ratis_net/) — applique la loi LCT + a les émotions (ETH), utilise des briques d'AEON via ttf_bridge.
 - robot-Ratiss- : robot téléphone (interface port 12000, non inclus ici)
+
+## Nuance corrigée (3 composants distincts)
+- LLM (Qwen) : mémoire textuelle, hallucine.
+- RATISS-Net : mémoire logique + émotions (ETH), régi par la loi LCT (R = P_sig).
+- AEON : moteur topologique pur, SANS émotions, NON régi par P_sig. La loi LCT a été validée en l'utilisant comme outil (protéines, QPU — jamais halluciné car pas de langage).

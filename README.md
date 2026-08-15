@@ -67,7 +67,7 @@ Le LLM (Qwen 2.5:0.5b) génère (mémoire textuelle) → RATIS évalue (mémoire
 Test sur 5 questions pièges (fait fabriqué, confiance médicale, faux plafond numérique, prémisses fausses, citation fabriquée).
 
 - **Validé** : ancrage émotionnel (C4 2/3), convergence en 1 tour (C3 3/3), prudence médicale, citation réduite.
-- **Limite honnête** : le couplage guide l'**émotion** mais n'empêche pas un Qwen 0.5b de fabriquer des faits précis. AEON ne hallucine jamais car il ne génère pas de langage — le LLM hallucine toujours car il ne fait que ça.
+- **Limite honnête** : le couplage guide l'**émotion** mais n'empêche pas un Qwen 0.5b de fabriquer des faits précis. AEON ne hallucine jamais car il ne génère pas de langage (moteur topologique pur, sans émotions — distinct de RATISS-Net qui applique la loi LCT + a les émotions).
 
 ### Tool-calling certifié : 3/3 ✓
 

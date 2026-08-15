@@ -112,27 +112,36 @@ Le module `fusion/dual_memory.py` implémente le couplage bidirectionnel :
 
 ## 4. Architecture à 3 composants
 
-Le couplage ne fait pas intervenir que 2, mais **3** composants — et c'est
-essentiel pour l'honnêteté :
+ATTENTION — nuance importante (corrigée) : ce sont **deux architectures
+distinctes**, pas une seule "mémoire logique". AEON et RATISS-Net ne sont pas
+la même chose.
 
 ![Architecture à 3 composants](docs/figures/fig11_three_components.png)
 
-| Composant | Mémoire | Rôle | Hallucine ? |
+| Composant | Architecture | Émotions ? | Régi par la loi LCT ? |
 |---|---|---|---|
-| **LLM** (Qwen) | textuelle | génère le langage | **Oui** (fabrique des faits) |
-| **RATISS-Net** | logique (langage) | applique la loi LCT au langage, émotion ETH | Non (proxy P_sig) |
-| **RATISS-AEON-ODV** | logique (topologie pure) | raisonnement topo rigoureux (MCB, ZK) | **JAMAIS** |
+| **LLM** (Qwen) | mémoire textuelle, langage | Non | Non |
+| **RATISS-Net** | mémoire logique appliquée au langage + **émotions (ETH)** | **Oui** | **Oui** (ΔW = η·φ·P_sig·C) |
+| **RATISS-AEON-ODV** | moteur topologique pur (MCB, CollapseWell, ZK) — **infrastructure** | **Non** | **Non** |
 
-C'est **AEON** qui a formalisé et validé la loi LCT — sur les protéines, les
-cristaux, les MZI, les KMD, l'état quantique, le flux financier, les QPU IBM
-(7 jobs traçables) — **sans jamais halluciner**. Pourquoi ? Parce qu'AEON ne
-génère pas de langage : il mesure une structure topologique (persistance de
-cycle H1, MCB, invariance ZK). On ne peut pas fabriquer quand on ne fait que
-mesurer une forme.
+- **RATISS-Net** fonctionne, a des émotions (ETH), et applique la loi LCT
+  (R = P_sig). Il **utilise des briques d'AEON** (le cerveau TTF-Compute via
+  `ttf_bridge`) comme moteur de calcul.
+- **AEON** est le moteur topologique. Il **n'a pas d'émotions** et **ne
+  fonctionne pas sur la loi P_sig** : ce n'est pas lui qui est régi par la loi
+  LCT. C'est l'infrastructure de calcul topologique (IntricatedGraph, MCB,
+  CollapseWell, ZK). La loi LCT a été *formalisée et validée en l'utilisant
+  comme outil* — sur les protéines, les cristaux, les MZI, les KMD, l'état
+  quantique, le flux financier, les QPU IBM (7 jobs traçables) — mais AEON
+  lui-même n'est pas "régi par" P_sig.
 
-Le LLM hallucine par nature (mémoire textuelle seule). RATISS-Net en est
-l'application au langage. Le couplage est l'architecture qui fait travailler
-les trois ensemble.
+AEON ne hallucine jamais, non pas parce qu'il "applique la loi LCT", mais
+parce qu'il **ne génère pas de langage** : il mesure une structure
+topologique (persistance de cycle H1, MCB, invariance ZK). On ne peut pas
+fabriquer quand on ne fait que mesurer une forme.
+
+Le LLM hallucine par nature (mémoire textuelle seule). RATISS-Net applique
+la loi LCT + l'émotion au langage. AEON est le moteur qu'ils utilisent.
 
 ## 5. Ce que ça change
 

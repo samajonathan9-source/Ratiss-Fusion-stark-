@@ -54,7 +54,7 @@ def fig8_dual_memory():
     box(0.5, 4.5, 3.5, 2, "MÉMOIRE TEXTUELLE\n(LLM : Qwen)\n\nretient le mot,\nla séquence,\nla distribution",
         C_LLM)
     # Mémoire logique
-    box(8, 4.5, 3.5, 2, "MÉMOIRE LOGIQUE\n(RATIS-Net + AEON)\n\nretient la forme topo,\nl'émotion (ETH),\nla cohérence (LCT)",
+    box(8, 4.5, 3.5, 2, "MÉMOIRE LOGIQUE\n(RATIS-Net)\n\napplique la loi LCT\n+ émotion (ETH)\n(utilise le moteur AEON)",
         C_RATIS)
     # Couplage
     box(4.25, 1.5, 3.5, 1.8, "COUPLAGE\nBIDIRECTIONNEL\n\n= COGNITION",
@@ -186,16 +186,16 @@ def fig11_three_components():
     box(4.5, 4.5, 3, 1.8, "RATISS-Net\nLoi LCT (figée)\némotion ETH",
         C_RATIS)
     # AEON
-    box(8.5, 4.5, 4, 1.8, "RATISS-AEON-ODV\nTTF-Compute (MCB, ZK)\nJAMAIS halluciné\n(protéines, QPU)",
+    box(8.5, 4.5, 4, 1.8, "RATISS-AEON-ODV\nmoteur topo (MCB, ZK)\nsans émotions\n(infrastructure)",
         C_AEON)
     # Rôles
     box(0.5, 1.5, 3, 1.5, "génère\ntexte", C_LLM, 8)
-    box(4.5, 1.5, 3, 1.5, "applique LCT\nau langage", C_RATIS, 8)
-    box(8.5, 1.5, 4, 1.5, "raisonnement topo\nrigoureux\n(7 jobs QPU tracés)", C_AEON, 8)
+    box(4.5, 1.5, 3, 1.5, "applique LCT\n+ émotion ETH", C_RATIS, 8)
+    box(8.5, 1.5, 4, 1.5, "moteur topo\nutilisé par Net\n(7 jobs QPU)", C_AEON, 8)
     # Statut hallucination
     box(0.5, 0.1, 3, 0.9, "HALLUCINE\n(fabrique des faits)", C_REJECT, 8)
-    box(4.5, 0.1, 3, 0.9, "non (proxy P_sig)", C_CERT, 8)
-    box(8.5, 0.1, 4, 0.9, "JAMAIS\n(topologie pure)", C_CERT, 8)
+    box(4.5, 0.1, 3, 0.9, "non (proxy P_sig)\nA les émotions", C_CERT, 8)
+    box(8.5, 0.1, 4, 0.9, "JAMAIS\n(topo pure, pas LCT)\nsans émotions", C_CERT, 8)
 
     # flèches
     for x in [3.5, 7.5]:
