@@ -1,0 +1,24 @@
+# RATIS-Fusion-stark- — dépendances (CPU-only, offline-capable)
+
+# Cerveau RATIS (topologie, LCT, ETH)
+numpy>=1.24,<3.0
+scipy>=1.11,<2.0
+gudhi>=3.9
+networkx>=3.0
+psutil>=5.0
+scikit-learn>=1.3
+
+# Corps Needle (tool-calling, moteur pré-cachable pour offline)
+cactus-needle>=2.0
+
+# Figures / doc
+matplotlib>=3.7
+
+# TTS (offline via pyttsx3 + espeak-ng ; fallback gTTS online)
+pyttsx3>=2.90
+gTTS>=2.3
+
+# L'interface (à venir — Jonathan cherche une base plus légère)
+# fastapi>=0.100
+# uvicorn>=0.20
+# pydantic>=2.0

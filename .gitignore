@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# TTS temp files
+/tmp/*.mp3
+/tmp/*.wav
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cactus needle weights (si fine-tuning local)
+*.cact
+checkpoints/
