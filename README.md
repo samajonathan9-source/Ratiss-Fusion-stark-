@@ -45,6 +45,30 @@ La boucle cognitive symbiotique (6 étapes + routing) :
 
 ## Résultats validés (honnêtes)
 
+### Dualité des mémoires (thèse de Jonathan Evina)
+
+Il existe deux mémoires fondamentales couplées : la **textuelle** (LLM, retient le mot) et la **logique** (RATIS, retient la forme topologique + émotion + cohérence). Le couplage **est** la cognition.
+
+![Les deux mémoires couplées](docs/figures/fig8_dual_memory.png)
+![Architecture à 3 composants](docs/figures/fig11_three_components.png)
+
+Voir [DUALITE_MEMOIRES.md](docs/DUALITE_MEMOIRES.md) — formalisation ancrée dans la neuroscience (mémoire déclarative vs procédurale) et la loi LCT.
+
+### Convergence bidirectionnelle LLM ↔ RATIS
+
+![Boucle de convergence](docs/figures/fig9_convergence_loop.png)
+
+Le LLM (Qwen 2.5:0.5b) génère (mémoire textuelle) → RATIS évalue (mémoire logique : P_sig + émotion + LCT) → si non convergé, feedback → régénération. **3/3 hypothèses validées.**
+
+### Benchmark d'hallucination : LLM seul vs couplé
+
+![Benchmark d'hallucination](docs/figures/fig10_hallucination_benchmark.png)
+
+Test sur 5 questions pièges (fait fabriqué, confiance médicale, faux plafond numérique, prémisses fausses, citation fabriquée).
+
+- **Validé** : ancrage émotionnel (C4 2/3), convergence en 1 tour (C3 3/3), prudence médicale, citation réduite.
+- **Limite honnête** : le couplage guide l'**émotion** mais n'empêche pas un Qwen 0.5b de fabriquer des faits précis. AEON ne hallucine jamais car il ne génère pas de langage — le LLM hallucine toujours car il ne fait que ça.
+
 ### Tool-calling certifié : 3/3 ✓
 
 ![Tool-calling certifié](docs/figures/fig6_tool_calling.png)

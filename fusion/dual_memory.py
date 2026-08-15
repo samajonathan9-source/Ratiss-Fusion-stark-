@@ -125,14 +125,32 @@ class DualMemoryCoupler:
 
     def _build_guided_prompt(self, message: str, env_name: str,
                              emotion: str, p_sig: float, turn: int) -> str:
-        """Construit un prompt ancré par le signal logique de RATIS."""
+        """Construit un prompt ancré par le signal logique de RATIS.
+
+        La mémoire logique guide la mémoire textuelle de deux façons :
+          1. ancrage émotionnel (ETH) — la réponse doit être cohérente avec
+             l'émotion perçue.
+          2. prudence factuelle (anti-hallucination) — si RATIS détecte une
+             émotion négative (peur/colère/tristesse) ou un tour de retry,
+             il injecte une consigne de prudence : ne pas fabriquer de faits.
+        """
         emo_phrase = self._emotion_to_phrase(emotion, env_name)
+        # détection d'un contexte à risque (question piège / émotion négative)
+        risky = (emotion in ("tristesse", "colère", "peur")
+                 or env_name in ("peur", "colère"))
+        prudence = ""
+        if risky or turn > 0:
+            prudence = (" If you do not know the exact answer, say so honestly. "
+                        "Do not invent numbers, names, quotes or facts. "
+                        "Prefer to admit uncertainty over fabrication. ")
         if turn == 0:
             return (f"You are RATIS, a sovereign agent. {emo_phrase}. "
+                    f"{prudence}"
                     f"Reply in ONE short sentence to: {message}")
         return (f"You are RATIS. {emo_phrase}. "
                 f"Your previous reply lacked topological coherence (P_sig={p_sig:.2f}, "
-                f"too low). Reply again in ONE short, coherent sentence to: {message}")
+                f"too low). {prudence} "
+                f"Reply again in ONE short, coherent sentence to: {message}")
 
     def converge(self, message: str, env_name: str = "neutre") -> ConvergenceResult:
         """Boucle de convergence LLM ↔ RATIS jusqu'à certification."""
