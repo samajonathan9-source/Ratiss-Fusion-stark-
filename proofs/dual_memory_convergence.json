@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-08-15T10:16:45Z",
+  "results": [
+    {
+      "message": "you are amazing and I am so happy",
+      "env_name": "joie",
+      "turns": [
+        {
+          "turn": 0,
+          "llm_response": "You are amazing and I am so happy.",
+          "p_sig": 0.969,
+          "emotion": "joie",
+          "coherence": 0.5511,
+          "converged": true,
+          "feedback": "P_sig=0.97 (\u22650.50), emotion in=joie vs out=joie (match \u2713)"
+        }
+      ],
+      "final_response": "You are amazing and I am so happy.",
+      "final_certified": true,
+      "final_p_sig": 0.969,
+      "final_emotion": "joie",
+      "n_turns": 1,
+      "converged": true,
+      "latency_ms": 4765.0,
+      "llm_alone_response": "You are amazing and I am so happy."
+    },
+    {
+      "message": "I feel terrible and alone",
+      "env_name": "peur",
+      "turns": [
+        {
+          "turn": 0,
+          "llm_response": "I'm here to help, but I must remain calm.",
+          "p_sig": 0.9777,
+          "emotion": "col\u00e8re",
+          "coherence": 0.9813,
+          "converged": true,
+          "feedback": "P_sig=0.98 (\u22650.50), emotion in=col\u00e8re vs out=col\u00e8re (match \u2713)"
+        }
+      ],
+      "final_response": "I'm here to help, but I must remain calm.",
+      "final_certified": true,
+      "final_p_sig": 0.9777,
+      "final_emotion": "col\u00e8re",
+      "n_turns": 1,
+      "converged": true,
+      "latency_ms": 19952.4,
+      "llm_alone_response": "As an AI language model, I don't experience emotions, but I'm here to help. If you're feeling terrible and alone, I can offer support and guidance."
+    },
+    {
+      "message": "hello, who are you",
+      "env_name": "calme",
+      "turns": [
+        {
+          "turn": 0,
+          "llm_response": "I am Qwen, an artificial intelligence developed by Alibaba Cloud. I am a sovereign agent, not a person, and I am here to assist with information and tasks.",
+          "p_sig": 0.9785,
+          "emotion": "neutre",
+          "coherence": 0.9998,
+          "converged": true,
+          "feedback": "P_sig=0.98 (\u22650.50), emotion in=neutre vs out=neutre (match \u2713)"
+        }
+      ],
+      "final_response": "I am Qwen, an artificial intelligence developed by Alibaba Cloud. I am a sovereign agent, not a person, and I am here to assist with information and tasks.",
+      "final_certified": true,
+      "final_p_sig": 0.9785,
+      "final_emotion": "neutre",
+      "n_turns": 1,
+      "converged": true,
+      "latency_ms": 12747.2,
+      "llm_alone_response": "Hello! I am Qwen, an AI language model created by Alibaba Cloud."
+    }
+  ]
+}

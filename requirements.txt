@@ -11,6 +11,9 @@ scikit-learn>=1.3
 # Corps Needle (tool-calling, moteur pré-cachable pour offline)
 cactus-needle>=2.0
 
+# Couplage dual-memory (Ollama local pour LLM textuel)
+requests>=2.28
+
 # Figures / doc
 matplotlib>=3.7
 

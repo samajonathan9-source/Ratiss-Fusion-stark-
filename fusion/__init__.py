@@ -13,5 +13,7 @@ Propriété intellectuelle : JOHNKING0 & Jonathan Evina (ORCID 0009-0000-4092-53
 """
 from .bridge import RatisFusionAgent, FusionThought
 from .tts import OfflineTTS
+from .dual_memory import DualMemoryCoupler
 
-__all__ = ["RatisFusionAgent", "FusionThought", "OfflineTTS"]
+__all__ = ["RatisFusionAgent", "FusionThought", "OfflineTTS",
+           "DualMemoryCoupler"]
